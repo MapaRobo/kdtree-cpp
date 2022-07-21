@@ -1,6 +1,15 @@
 C++ Kd-Tree Library
 ===================
 
+Using in MapaRobo framework
+--------------------
+
+1. Make sure gnuplot is installed
+2. In main.cpp put the point cloud into a 2D vec
+3. Type ```g++ main.cpp localplan.cpp plotter.cpp kdtree.cpp -o planner.o && ./planner.o``` into the terminal
+4. Type gnuplot into the terminal
+5. Type ```plot "data.dat"``` into gnuplot
+
 This is a standalone C++ version of the kd-tree implementation in the
 Gamera framework that has been extended by a range search and has
 been relicensed by the original author under a BSD style license.
