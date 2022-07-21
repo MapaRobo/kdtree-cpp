@@ -17,3 +17,5 @@ std::vector<std::vector<double>> straightLine(std::vector<double> point1, std::v
 std::vector<std::vector<double>>  minMaxPath(std::vector<std::vector<double>> path, std::vector<double> pos);
 
 std::vector<std::vector<double>> minMaxCloud(std::vector<std::vector<double>> minMaxPath, double radius, std::vector<double> loc);
+
+bool lineSegSide(std::vector<double> point1, std::vector<double> point2, std::vector<double> point, std::vector<double> origin);

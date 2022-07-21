@@ -1,5 +1,6 @@
 #include <time.h>
 #include <cmath>
+#include <math.h>  
 #include <cstdlib>
 #include <iostream>
 #include <vector>
@@ -181,4 +182,10 @@ std::vector<std::vector<double>> minMaxCloud(std::vector<std::vector<double>> mi
   minMaxPath[1][1] -= radius * normslope2[0];
 
   return minMaxPath;
+}
+
+bool lineSegSide(std::vector<double> point1, std::vector<double> point2, std::vector<double> point, std::vector<double> origin) {
+  double value = (point[0] - point1[0])*(point2[1] - point1[1]) - (point[1] - point1[1])*(point2[0] - point1[0]);
+  double valueO = (origin[0] - point1[0])*(point2[1] - point1[1]) - (origin[1] - point1[1])*(point2[0] - point1[0]);
+  return !(signbit(value) ^ signbit(valueO));
 }
