@@ -6,15 +6,19 @@
 #include "plotter.h"
 
 int main() {
+  std::vector<std::vector<double>> vecTree;
   std::vector<std::vector<double>> vec;
   int i, j = 0;
   vec.push_back({1, 1});
+  vecTree.push_back({1, 1});
   for (double i = 1; i < 4; i++) {
     vec.push_back({0, i});
+    vecTree.push_back({0, i});
   }
   vec.push_back({1, 3});
   for (double i = 1; i < 4; i++) {
     vec.push_back({i, 4});
+    vecTree.push_back({i, 4});
   }
   vec.push_back({3, 3});
   double sizeVec = vec.size();
@@ -29,7 +33,7 @@ int main() {
 
   double center[2] = {meanx, meany};
 
-  Kdtree::KdTree tree = makeKDTree(vec);
+  Kdtree::KdTree tree = makeKDTree(vecTree);
 
 
   std::vector<double> loc(2);
@@ -49,6 +53,8 @@ int main() {
 
   std::vector<std::vector<double>> sidePath;
 
+  //std::cout << path.size() << '\n';
+
   for (int i = 0; i < path.size(); i++) {
     std::cout << i << '\n';
     if (lineSegSide(mmCloud[0], mmCloud[1], path[i], loc)) {
@@ -58,6 +64,7 @@ int main() {
 
   }
 
+  std::cout << "end of prog\n";
   //v1[0] = 
 
   datalog(sidePath, "side.dat");
